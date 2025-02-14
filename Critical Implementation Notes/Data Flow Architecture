@@ -1,0 +1,6 @@
+graph TD
+    A[Starlink Satellites] --> B{SpaceX API}
+    B --> C[Data Encryption Module]
+    C --> D[On-Chain Storage]
+    D --> E[AI Processing]
+    E --> F[User Interface]
