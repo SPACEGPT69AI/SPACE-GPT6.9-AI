@@ -1,0 +1,20 @@
+networks:
+  solana:
+    mainnet:
+      endpoint: https://api.mainnet.solana.com
+      program_id: SPCEGPT69...
+    devnet:
+      endpoint: https://api.devnet.solana.com
+      faucet: https://faucet.spacegpt.dev
+
+ai_models:
+  gpt6.9:
+    model_path: /models/space_gpt_v69.gguf
+    context_window: 8192
+    temperature: 0.69
+
+hardware:
+  groq:
+    lpu_count: 4
+    memory_per_lpu: 32GB
+    quantization: int8
