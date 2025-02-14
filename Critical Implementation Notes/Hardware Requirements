@@ -1,0 +1,4 @@
+# Minimum GPU configuration
+NVIDIA_DRIVER_VERSION: 535+
+VRAM_PER_NODE: 24GB+ 
+GROQ_LPU_INSTALLED: true
