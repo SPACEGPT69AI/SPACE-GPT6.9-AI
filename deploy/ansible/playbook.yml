@@ -1,0 +1,24 @@
+- name: Deploy SpaceGPT Cluster
+  hosts: space_nodes
+  vars:
+    solana_version: 1.16.4
+    groq_driver_version: 6.9.0
+  tasks:
+    - name: Install NVIDIA drivers
+      when: "'gpu' in group_names"
+      ansible.builtin.apt:
+        name: "nvidia-driver-535"
+        state: present
+
+    - name: Configure Groq LPU
+      ansible.builtin.shell: |
+        wget https://groq.com/installers/spacegpt.sh
+        chmod +x spacegpt.sh
+        ./spacegpt.sh --version {{ groq_driver_version }}
+
+    - name: Launch Validator Node
+      ansible.builtin.systemd:
+        name: space-validator
+        enabled: yes
+        state: started
+        daemon_reload: yes
