@@ -1,0 +1,4 @@
+# Required encryption standards
+AES_KEY_LENGTH = 512
+ZK_PROOF_CIRCUITS = "space_gpt.zok"
+HOMOMORPHIC_SCHEME = "CKKS"
